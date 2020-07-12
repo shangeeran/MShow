@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import {Text, View} from 'react-native';
 
 class Login extends Component {
     render() {
         return (
-            <div>
-
-            </div>
+            <View>
+                <Text>
+                    cdfds
+                </Text>
+            </View>
         );
     }
 }

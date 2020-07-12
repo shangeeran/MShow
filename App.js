@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Splash from './screens/splash';
-import Welcome from './screens/welcome';
+import {Welcome} from './screens/welcome';
 import Login from './screens/login';
 import SignUp from './screens/signup';
 import Success from './screens/success';
@@ -18,27 +18,27 @@ export default class App extends Component {
 
     createHomeStack = () =>
         <Stack.Navigator>
+            {/*<Stack.Screen*/}
+            {/*    name="SplashScreen"*/}
+            {/*    component={Splash}*/}
+            {/*    options={{*/}
+            {/*        title: "Welcome to MShow",*/}
+            {/*        headerStyle: { backgroundColor: "white" },*/}
+            {/*        headerTintColor: "#000000"*/}
+            {/*    }}*/}
+            {/*/>*/}
             <Stack.Screen
-                name="SplashScreen"
-                component={Splash}
+                name="WelcomeScreen"
+                component={Welcome}
                 options={{
                     title: "Welcome to MShow",
                     headerStyle: { backgroundColor: "white" },
                     headerTintColor: "#000000"
                 }}
             />
-            <Stack.Screen
-                name="WelcomeScreen"
-                component={Welcome}
-                options={{
-                    title: "xxxxxx",
-                    headerStyle: { backgroundColor: "white" },
-                    headerTintColor: "#000000"
-                }}
-            />
 
             <Stack.Screen
-                name="LoginScreen"
+                name="Login"
                 component={Login}
                 options={{
                     title: "xxxxxx",
