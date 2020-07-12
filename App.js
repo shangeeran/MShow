@@ -1,114 +1,98 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, { Component } from 'react';
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import Splash from './screens/splash';
+import Welcome from './screens/welcome';
+import Login from './screens/login';
+import SignUp from './screens/signup';
+import Success from './screens/success';
+import Movies from './screens/movies';
+import Account from './screens/account';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+const Stack = createStackNavigator();
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
-export default App;
+export default class App extends Component {
+
+    createHomeStack = () =>
+        <Stack.Navigator>
+            <Stack.Screen
+                name="SplashScreen"
+                component={Splash}
+                options={{
+                    title: "Welcome to MShow",
+                    headerStyle: { backgroundColor: "white" },
+                    headerTintColor: "#000000"
+                }}
+            />
+            <Stack.Screen
+                name="WelcomeScreen"
+                component={Welcome}
+                options={{
+                    title: "xxxxxx",
+                    headerStyle: { backgroundColor: "white" },
+                    headerTintColor: "#000000"
+                }}
+            />
+
+            <Stack.Screen
+                name="LoginScreen"
+                component={Login}
+                options={{
+                    title: "xxxxxx",
+                    headerStyle: { backgroundColor: "white" },
+                    headerTintColor: "#000000"
+                }}
+            />
+            <Stack.Screen
+                name="SignUpScreen"
+                component={SignUp}
+                options={{
+                    title: "xxxxxx",
+                    headerStyle: { backgroundColor: "white" },
+                    headerTintColor: "#000000"
+                }}
+            />
+            <Stack.Screen
+                name="SuccessScreen"
+                component={Success}
+                options={{
+                    title: "xxxxxx",
+                    headerStyle: { backgroundColor: "white" },
+                    headerTintColor: "#000000"
+                }}
+            />
+            <Stack.Screen
+                name="MoviesScreen"
+                component={Movies}
+                options={{
+                    title: "xxxxxx",
+                    headerStyle: { backgroundColor: "white" },
+                    headerTintColor: "#000000"
+                }}
+            />
+            <Stack.Screen
+                name="AccountScreen"
+                component={Account}
+                options={{
+                    title: "xxxxxx",
+                    headerStyle: { backgroundColor: "white" },
+                    headerTintColor: "#000000"
+                }}
+            />
+
+
+        </Stack.Navigator>
+
+
+
+    render() {
+        return (
+            <NavigationContainer>
+                {this.createHomeStack()}
+            </NavigationContainer>
+        );
+    }
+}
