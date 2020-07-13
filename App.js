@@ -19,7 +19,7 @@ export default class App extends Component {
     createHomeStack = () =>
         <Stack.Navigator>
             {/*<Stack.Screen*/}
-            {/*    name="SplashScreen"*/}
+            {/*    name="Splash"*/}
             {/*    component={Splash}*/}
             {/*    options={{*/}
             {/*        title: "Welcome to MShow",*/}
@@ -28,7 +28,7 @@ export default class App extends Component {
             {/*    }}*/}
             {/*/>*/}
             <Stack.Screen
-                name="WelcomeScreen"
+                name="Welcome"
                 component={Welcome}
                 options={{
                     title: "Welcome to MShow",
@@ -47,7 +47,7 @@ export default class App extends Component {
                 }}
             />
             <Stack.Screen
-                name="SignUpScreen"
+                name="SignUp"
                 component={SignUp}
                 options={{
                     title: "xxxxxx",
@@ -56,7 +56,7 @@ export default class App extends Component {
                 }}
             />
             <Stack.Screen
-                name="SuccessScreen"
+                name="Success"
                 component={Success}
                 options={{
                     title: "xxxxxx",
@@ -65,7 +65,7 @@ export default class App extends Component {
                 }}
             />
             <Stack.Screen
-                name="MoviesScreen"
+                name="Movies"
                 component={Movies}
                 options={{
                     title: "xxxxxx",
@@ -74,7 +74,7 @@ export default class App extends Component {
                 }}
             />
             <Stack.Screen
-                name="AccountScreen"
+                name="Account"
                 component={Account}
                 options={{
                     title: "xxxxxx",
