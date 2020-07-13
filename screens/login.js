@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {StyleSheet, Button, View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
-import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scrollview";
 
 export default class Login extends React.Component {
     state = {
@@ -17,73 +16,38 @@ export default class Login extends React.Component {
     render() {
         console.debug(this.state.userReq);
         return (
-            <KeyboardAwareScrollView
-                keyboardShouldPersistTaps="handled"
-                resetScrollToCoords={{ x: 0, y: 0 }}
-                keyboardOpeningTime={0}
-                scrollEnabled={true}
-            >
                 <View style={styles.container}>
                     {/*<View style={styles.proImg}>*/}
                     {/*    <Image source={require('../assets/farmer.png')} style={{width: 150, height: 150}} />*/}
                     {/*</View>*/}
 
                     <View style={styles.textVisible}>
-                        <Text>First Name</Text>
+                        <Text>User Name</Text>
                     </View>
                     <TextInput
-                        placeholder="Shangeeran"
+                        placeholder="Enter your user name"
                         style={styles.input}
                         autoCapitalize="none"
-                        onChangeText={val => this.onChangeText('firstName', val)}
+                        onChangeText={val => this.onChangeText('userName', val)}
                     />
                     <View style={styles.textVisible}>
-                        <Text>Last Name</Text>
+                        <Text>Password</Text>
                     </View>
                     <TextInput
-                        placeholder="Kulasegaram"
+                        placeholder="Enter the password"
                         style={styles.input}
                         autoCapitalize="none"
-                        onChangeText={val => this.onChangeText('lastName', val)}
+                        onChangeText={val => this.onChangeText('password', val)}
                     />
-                    <View style={styles.textVisible}>
-                        <Text>NIC No</Text>
-                    </View>
-                    <TextInput
-                        placeholder="960721748v"
-                        style={styles.input}
-                        autoCapitalize="none"
-                        onChangeText={val => this.onChangeText('nicNo', val)}
-                    />
-                    <View style={styles.textVisible}>
-                        <Text>Location</Text>
-                    </View>
-                    <TextInput
-                        placeholder="Jaffna"
-                        style={styles.input}
-                        autoCapitalize="none"
-                        onChangeText={val => this.onChangeText('location', val)}
-                    />
-                    <View style={styles.textVisible}>
-                        <Text>Soil Type</Text>
-                    </View>
-                    <TextInput
-                        placeholder="Clay"
-                        style={styles.input}
-                        autoCapitalize="none"
-                        onChangeText={val => this.onChangeText('soilType', val)}
-                    />
-
 
                     <TouchableOpacity style = {styles. buttonContainer}
-                                      onPress={() => this.props.navigation.navigate('ProfileSetting2', { screenName: "ProfileSetting2" })}
+                                      onPress={() => this.props.navigation.navigate('Movies', { screenName: "Movies" })}
                     >
                         <Text style = {styles.textNext}>
-                            Next
+                            Login
                         </Text>
                     </TouchableOpacity>
                 </View>
-            </KeyboardAwareScrollView>
         );
     }
 }
