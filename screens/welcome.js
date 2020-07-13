@@ -40,8 +40,6 @@ const styles = StyleSheet.create({
         paddingLeft: 30,
         padding: 10,
         color: '#CE4646',
-
-
     },
 
     b1: {

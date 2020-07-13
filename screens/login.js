@@ -44,9 +44,14 @@ export default class Login extends React.Component {
                                       onPress={() => this.props.navigation.navigate('Movies', { screenName: "Movies" })}
                     >
                         <Text style = {styles.textNext}>
-                            Login
+                            Sign In
                         </Text>
                     </TouchableOpacity>
+                    <Text style={styles.t1}>Need help?</Text>
+                    <Text style={styles.t2}>New to
+                        <Text style={styles.t3}> MShow</Text>?
+                        <Text style={{color: 'blue'}} onPress={() => this.props.navigation.navigate('SignUp', { screenName: "SignUp" })}> Sign up</Text> Now.</Text>
+
                 </View>
         );
     }
@@ -74,8 +79,9 @@ const styles = StyleSheet.create({
         padding: '5%'
     },
     textVisible: {
-        paddingRight: '60%',
-        fontSize: 18,
+        paddingRight: 250,
+        fontSize: 28,
+        fontWeight: 'bold',
     },
     buttonContainer : {
         bottom:20,
@@ -92,6 +98,32 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         color: '#fff',
+    },
+    t1: {
+        textAlign: 'left',
+        fontSize: 20,
+        fontFamily: 'product-sans',
+        top: 10,
+        padding: 10,
+    },
+
+    t2: {
+        textAlign: 'left',
+        fontSize: 20,
+        fontFamily: 'product-sans',
+        top: 20,
+        paddingLeft: 30,
+        padding: 10,
+    },
+    t3: {
+        textAlign: 'left',
+        fontSize: 20,
+        fontFamily: 'product-sans',
+        fontWeight: 'bold',
+        top: 20,
+        paddingLeft: 30,
+        padding: 10,
+        color: '#CE4646',
     },
 });
 
