@@ -2,19 +2,19 @@ import React, {Component} from 'react';
 import {StyleSheet, Button, View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
 
 export default class Login extends React.Component {
-    state = {
-        userReq:{}
-    };
-
-    onChangeText = (refer, value) => {
-        const {userReq} = this.state;
-        userReq[refer] = value;
-        this.setState({userReq})
-    };
+    // state = {
+    //     userReq:{}
+    // };
+    //
+    // onChangeText = (refer, value) => {
+    //     const {userReq} = this.state;
+    //     userReq[refer] = value;
+    //     this.setState({userReq})
+    // };
 
 
     render() {
-        console.debug(this.state.userReq);
+        // console.debug(this.state.userReq);
         return (
                 <View style={styles.container}>
                     {/*<View style={styles.proImg}>*/}

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableHighlight} from 'react-native';
+import {View, Text, StyleSheet, TouchableHighlight, Image} from 'react-native';
 
 export class Welcome extends Component {
     render() {
@@ -7,9 +7,10 @@ export class Welcome extends Component {
             <View>
                 <Text style={styles.t1}>Welcome to</Text>
                 <Text style={styles.t2}>MShow</Text>
+                <Image source={require('../assets/logo.png')} style={styles.img1} />
                 <TouchableHighlight
                     style={styles.b1}
-                    onPress={() => this.props.navigation.navigate('Login', { screenName: "Login" })}
+                    onPress={() => this.props.navigation.navigate('OnBoard', { screenName: "OnBoard" })}
                 >
                     <Text style={styles.b2}>Get Start</Text>
                 </TouchableHighlight>
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     },
 
     b1: {
-        marginTop: 380,
+        marginTop: 150,
         marginLeft: 220,
         // marginRight: 110,
         backgroundColor: '#05C167',
@@ -57,5 +58,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#fff',
         margin: 10,
+    },
+    img1: {
+        height: 180,
+        width: 200,
+        marginLeft: 150,
+        marginTop: 80,
     },
 });
