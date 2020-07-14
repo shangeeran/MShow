@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {StyleSheet, Button, View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
+import Movies from './movies';
 
-export default class SignUp extends React.Component {
+class SignUp extends Component {
     // state = {
     //     userReq:{}
     // };
@@ -71,6 +72,8 @@ export default class SignUp extends React.Component {
         );
     }
 }
+
+
 
 const styles = StyleSheet.create({
     input: {
@@ -142,3 +145,4 @@ const styles = StyleSheet.create({
     },
 });
 
+export default SignUp;

@@ -31,7 +31,7 @@ export default class App extends Component {
                 name="OnBoard"
                 component={OnBoard}
                 options={{
-                    title: "xxxxxx",
+                    title: "MShow",
                     headerStyle: { backgroundColor: "white" },
                     headerTintColor: "#000000"
                 }}
@@ -40,7 +40,7 @@ export default class App extends Component {
                 name="Login"
                 component={Login}
                 options={{
-                    title: "xxxxxx",
+                    title: "Login Screen",
                     headerStyle: { backgroundColor: "white" },
                     headerTintColor: "#000000"
                 }}
@@ -49,7 +49,7 @@ export default class App extends Component {
                 name="SignUp"
                 component={SignUp}
                 options={{
-                    title: "xxxxxx",
+                    title: "SignUp Screen",
                     headerStyle: { backgroundColor: "white" },
                     headerTintColor: "#000000"
                 }}
@@ -58,7 +58,7 @@ export default class App extends Component {
                 name="Success"
                 component={Success}
                 options={{
-                    title: "xxxxxx",
+                    title: "Sign up Successfully",
                     headerStyle: { backgroundColor: "white" },
                     headerTintColor: "#000000"
                 }}
@@ -67,7 +67,7 @@ export default class App extends Component {
                 name="Movies"
                 component={Movies}
                 options={{
-                    title: "xxxxxx",
+                    title: "Movies Screen",
                     headerStyle: { backgroundColor: "white" },
                     headerTintColor: "#000000"
                 }}
@@ -76,7 +76,7 @@ export default class App extends Component {
                 name="Account"
                 component={Account}
                 options={{
-                    title: "xxxxxx",
+                    title: "User Profile",
                     headerStyle: { backgroundColor: "white" },
                     headerTintColor: "#000000"
                 }}

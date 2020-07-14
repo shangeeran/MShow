@@ -1,25 +1,43 @@
-import React, { Component } from 'react'
-import { Text, ListView, StyleSheet } from 'react-native'
+import React, {Component} from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Success from './success';
 
-export default class Movies extends Component {
-    constructor() {
-        super();
-        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        this.state = {
-            dataSource: ds.cloneWithRows(['Android','iOS', 'Java','Php', 'Hadoop',
-                'Sap', 'Python','Ajax', 'C++',
-                'Ruby', 'Rails','.Net', 'Perl']),
-        };
-    }
-
+class Movies extends Component {
     render() {
         return (
-            <ListView
-                dataSource={this.state.dataSource}
-                renderRow={
-                    (rowData) =>
-                        <Text style={{fontSize: 20}}>{rowData}</Text>}
-            />
+            // Logout function
+            <View>
+                <TouchableOpacity style = {styles. buttonContainer}
+                                  onPress={() => this.props.navigation.navigate('Success', { screenName: "Success" })}
+                >
+                    <Text style = {styles.textNext}>
+                        Log out
+                    </Text>
+                </TouchableOpacity>
+            </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    buttonContainer : {
+        borderWidth: 1,
+        borderRadius: 30,
+        paddingVertical: 8,
+        paddingHorizontal: 40,
+        borderColor: '#05C167',
+        backgroundColor: '#05C167',
+        marginTop: 20,
+        marginLeft: 260,
+    },
+    textNext: {
+        fontFamily: 'serif',
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#fff',
+    },
+});
+
+export default Movies;
+
+

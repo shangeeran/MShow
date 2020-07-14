@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Button, View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
 
-export default class Login extends React.Component {
+export default class Login extends Component {
     // state = {
     //     userReq:{}
     // };
