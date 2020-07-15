@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Button, View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
-
+import { StackNavigator } from 'react-navigation';
 export default class Login extends Component {
     // state = {
     //     userReq:{}
@@ -11,7 +11,66 @@ export default class Login extends Component {
     //     userReq[refer] = value;
     //     this.setState({userReq})
     // };
+    static navigationOptions =
+    {
+       title: 'LoginActivity',
+    };
 
+    constructor(props) {
+ 
+        super(props)
+     
+        this.state = {
+     
+          UserEmail: '',
+          UserPassword: ''
+     
+        }
+     
+      }
+
+      UserLoginFunction = () =>{
+ 
+        const { UserEmail }  = this.state ;
+        const { UserPassword }  = this.state ;
+        
+        
+       fetch('https://localhost/User_Login.php', {
+         method: 'POST',
+         headers: {
+           'Accept': 'application/json',
+           'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+        
+           email: UserEmail,
+        
+           password: UserPassword
+        
+         })
+        
+       }).then((response) => response.json())
+             .then((responseJson) => {
+        
+               // If server response message same as Data Matched
+              if(responseJson === 'Data Matched')
+               {
+        
+                   //Then open Profile activity and send user email to profile activity.
+                   this.props.navigation.navigate('Movies');
+        
+               }
+               else{
+        
+                 Alert.alert(responseJson);
+               }
+        
+             }).catch((error) => {
+               console.error(error);
+             });
+        
+        
+         }
 
     render() {
         // console.debug(this.state.userReq);
@@ -41,7 +100,7 @@ export default class Login extends Component {
                     />
 
                     <TouchableOpacity style = {styles. buttonContainer}
-                                      onPress={() => this.props.navigation.navigate('Movies', { screenName: "Movies" })}
+                                      onPress={this.UserLoginFunction}
                     >
                         <Text style = {styles.textNext}>
                             Sign In
@@ -126,4 +185,3 @@ const styles = StyleSheet.create({
         color: '#CE4646',
     },
 });
-
