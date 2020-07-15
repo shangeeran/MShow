@@ -16,7 +16,7 @@ export default class Project extends Component {
 
     GetData = () => {
         //Service to get the data from the server to render
-        return fetch('https://jsonplaceholder.typicode.com/posts')
+        return fetch('http://www.omdbapi.com/?i=tt3896198&apikey=8e5f6cfa')
             .then(response => response.json())
             .then(responseJson => {
                 this.setState({
